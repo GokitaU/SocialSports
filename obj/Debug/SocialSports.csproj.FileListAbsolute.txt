@@ -1,0 +1,7 @@
+C:\Users\HP ENVY\Documents\GitHub\NflBets\SocialSports\SocialSports\bin\SocialSports.dll
+C:\Users\HP ENVY\Documents\GitHub\NflBets\SocialSports\SocialSports\bin\SocialSports.pdb
+C:\Users\HP ENVY\Documents\GitHub\NflBets\SocialSports\SocialSports\bin\AjaxControlToolkit.dll
+C:\Users\HP ENVY\Documents\GitHub\NflBets\SocialSports\SocialSports\bin\System.Data.Linq.dll
+C:\Users\HP ENVY\Documents\GitHub\NflBets\SocialSports\SocialSports\obj\Debug\SocialSports.csprojResolveAssemblyReference.cache
+C:\Users\HP ENVY\Documents\GitHub\NflBets\SocialSports\SocialSports\obj\Debug\SocialSports.dll
+C:\Users\HP ENVY\Documents\GitHub\NflBets\SocialSports\SocialSports\obj\Debug\SocialSports.pdb

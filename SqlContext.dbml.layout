@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.875, 16.375" name="SqlContext">
+  <DataContextMoniker Name="/SqlContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="97b93470-e424-44c3-868e-5bbc59a5d162" absoluteBounds="0.75, 4.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SqlContextDataContext/tblNflSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46054231-a142-4a83-810f-9051ca711fd6" absoluteBounds="0.765, 5.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df30f5c0-6cbc-4abe-8208-e8bb9a106e4f" absoluteBounds="4.75, 0.875, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/SqlContextDataContext/tblNflTeam" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d356b84c-43a8-4b99-aab6-f7010a3f3078" absoluteBounds="4.765, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a2faa3c-80de-4606-b452-15c58e79a698" absoluteBounds="4.75, 3.75, 2, 1.193992513020834">
+      <DataClassMoniker Name="/SqlContextDataContext/tblSportsType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01c12930-29d5-406c-b0d7-2f20184e075f" absoluteBounds="4.765, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abf7f785-5eb6-4534-87df-e84498b41eae" absoluteBounds="7.5, 1.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SqlContextDataContext/tblUsersFavoriteNflTeam" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37fdcf57-3cbb-4771-9e9f-20ebb3d794da" absoluteBounds="7.515, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 2.10659912109375); (7.5 : 2.10659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SqlContextDataContext/tblNflTeam/tblNflTeam_tblUsersFavoriteNflTeam" />
+      <nodes>
+        <classShapeMoniker Id="df30f5c0-6cbc-4abe-8208-e8bb9a106e4f" />
+        <classShapeMoniker Id="abf7f785-5eb6-4534-87df-e84498b41eae" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1a587926-d997-4db9-8ea6-70d0eb73ecb3" absoluteBounds="2.5, 1.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/SqlContextDataContext/tblNflStatisticalCategoryType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="706b8f7f-3dbe-4655-ba38-caed66e43805" absoluteBounds="2.515, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef234b3a-533c-4788-816b-2345b7b00c4a" absoluteBounds="3.625, 5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SqlContextDataContext/tblNflPlayer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3b0af8e-9d32-4419-baad-a2e800fc3c81" absoluteBounds="3.64, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="901bac92-bc6c-4055-a572-f25eb40710cd" absoluteBounds="5.75, 5.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/SqlContextDataContext/tblNflStatisticalCategoryTypesOffensivePlayer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e010f828-c359-4ed9-84e9-2db51e21eab8" absoluteBounds="5.765, 6.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1e00490-5e57-4e1a-92e8-d18ee7a4ef8a" absoluteBounds="0.75, 7.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/SqlContextDataContext/tblNflStatisticalCategoryTypesDefensivePlayer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce42a7d1-7e86-4270-809b-834dd09a1754" absoluteBounds="0.765, 8.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb25afb2-2fde-4e69-98c2-c55ef40f505d" absoluteBounds="0.5, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SqlContextDataContext/tblUserTreeViewItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af2948ae-a5fc-4852-b3b7-623193206476" absoluteBounds="0.51500000000000012, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="136e3eba-c75a-4356-bbbb-9f96bbdbed15" absoluteBounds="5.75, 8, 2, 1.9631982421875">
+      <DataClassMoniker Name="/SqlContextDataContext/tblCredentialsRecovery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a17896c6-9548-4d9c-bf07-35c7cef382b5" absoluteBounds="5.7650000000000006, 8.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d077e2e6-a752-489f-8c9c-397dd6306002" absoluteBounds="3.375, 6.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SqlContextDataContext/tblUsersPaymentInformation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f640e83-f459-4a05-b820-0e4a7768ab1c" absoluteBounds="3.39, 7.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b0d75de-8c06-4d6c-be04-94ec2094f1ed" absoluteBounds="10.625, 1.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/SqlContextDataContext/tblLinkUsersToBet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e3a0c9f-6e73-4887-8de9-5197a5c74d94" absoluteBounds="10.64, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="193cd621-1fe4-4930-8806-460058f726f2" absoluteBounds="11.25, 11.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SqlContextDataContext/tblBetHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1e46a25-18f4-4492-bad9-a963c4b775e5" absoluteBounds="11.265, 12.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68701f89-37f6-49d4-bcf9-9906124e2a87" absoluteBounds="5, 13.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/SqlContextDataContext/tblParentBulletinBoard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6eb48de0-d183-4942-8058-4cfbbbdfa8c5" absoluteBounds="5.0150000000000006, 14.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dcd341bb-5e27-4fc3-8e90-c3fa3a348ae6" absoluteBounds="1.625, 13.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SqlContextDataContext/tblChildBulletinBoard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04f68343-f5a0-4df3-9b24-c91cca8df040" absoluteBounds="1.6400000000000001, 13.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 14.5152498372396); (3.625 : 14.5152498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SqlContextDataContext/tblParentBulletinBoard/tblParentBulletinBoard_tblChildBulletinBoard" />
+      <nodes>
+        <classShapeMoniker Id="68701f89-37f6-49d4-bcf9-9906124e2a87" />
+        <classShapeMoniker Id="dcd341bb-5e27-4fc3-8e90-c3fa3a348ae6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b9939e51-4816-4b26-9198-80f69c2e48a0" absoluteBounds="1.625, 2.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/SqlContextDataContext/tblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a702bd4b-74e8-456d-b83e-bd24eba3a756" absoluteBounds="1.6400000000000001, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 3.32054818880208); (8.5 : 3.32054818880208); (8.5 : 2.95359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SqlContextDataContext/tblUser/tblUser_tblUsersFavoriteNflTeam" />
+      <nodes>
+        <classShapeMoniker Id="b9939e51-4816-4b26-9198-80f69c2e48a0" />
+        <classShapeMoniker Id="abf7f785-5eb6-4534-87df-e84498b41eae" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="49510f19-0f41-4c58-866e-7d68838c10a1" absoluteBounds="8.125, 4.375, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/SqlContextDataContext/tblTeamStatsActualResult" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24f5d66c-86aa-43a5-9a6a-4aebd9bfb0f1" absoluteBounds="8.14, 4.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="037da2a4-f158-4919-b671-3a0ea87f5b82" absoluteBounds="12.625, 4.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SqlContextDataContext/tblBetApproval" />
+      <nestedChildShapes>
+        <elementListCompartment Id="037e60ac-854a-4aed-9272-a9db187b26a1" absoluteBounds="12.64, 4.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8b77cb0-4e23-4723-89cd-7ce8531498e6" absoluteBounds="10.25, 4.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SqlContextDataContext/tblPlayerBet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be608bd7-65ba-4d14-95cd-a7b8a7a51cc6" absoluteBounds="10.265, 5.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d3dea60-5c17-4ef0-87f3-32aa5da55810" absoluteBounds="8.625, 11.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SqlContextDataContext/tblTeamBet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a193dcbc-c79d-4130-80de-6c6b6a5b8489" absoluteBounds="8.64, 12.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb4ca61c-a967-4ce4-b87e-9706fbf0d937" absoluteBounds="0.5, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SqlContextDataContext/tblUsersBettingStatistic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f60f15a-80ff-460a-9259-e55c83efafb1" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5e1a3242-cca2-4d39-803f-69aa860231f0" absoluteBounds="12.625, 8.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SqlContextDataContext/tblStatsBetSearchQuery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d402e891-f526-48be-8c6a-b9129fd34d06" absoluteBounds="12.64, 8.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b98064bd-7062-4078-85d3-55cf71022185" absoluteBounds="3.625, 10.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/SqlContextDataContext/tblStatsPageVisit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26d0d373-f5c3-4f5d-b749-0e21e9973856" absoluteBounds="3.64, 10.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

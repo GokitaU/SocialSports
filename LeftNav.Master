@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="~/LeftNav.Master.cs" Inherits="SocialSports.MasterPages.LeftNav" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color:#333333;
+        }
+
+   </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+   
+
+<body>
+    <form id="form1" runat="server">
+    <div>
+
+           <nav class="navbar navbar-default" role="navigation" style="border-bottom: 1px solid #1C5E55; background-color:white; color:#1C5E55;"   >
+    <div class="container-fluid">
+    <div class="navbar-header">
+         <a class="navbar-brand" href="BetBrilliantly.aspx" runat="server" id="aBetBrilliantly" >BetBrilliantly &nbsp<span runat="server" id="span6" style="font-size:16px;" class="glyphicon glyphicon-home"></span></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>      
+    </div>
+    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+               <li id="liMyProfile" runat="server"><a id="aMyProfile" href="MyProfile.aspx"  runat="server">My Profile &nbsp<span runat="server" id="span3" style="font-size:16px;" class="glyphicon glyphicon-user"></span></a></li>
+               <li><a href="LogOut.aspx"  runat="server" id="aLogOut">Log Out &nbsp<span runat="server" id="span7" style="font-size:16px;" class="glyphicon glyphicon-log-out"></span></a></li>
+               <li><a href="SearchBets.aspx"  runat="server" id="aSearchBet">Search Bets &nbsp<span runat="server" id="span2" style="font-size:16px;" class="glyphicon glyphicon-search"></span></a></li>
+               <li><a href="CreateBet.aspx"  runat="server" id="aCreateBet">Create Bet &nbsp<span runat="server" id="span1" style="font-size:16px;" class="glyphicon glyphicon-usd"></span></a></li>      
+               <li><a href="Register.aspx"  runat="server" id="aRegister">Register &nbsp<span runat="server" id="span4" style="font-size:16px;" class="glyphicon glyphicon-pencil"></span></a></li>
+               <li><a href="Login.aspx"  runat="server" id="aLogin">Login &nbsp<span runat="server" id="span5" style="font-size:16px;" class="glyphicon glyphicon-log-in"></span></a></li>
+          </ul>
+
+        <asp:Label ID="lblUserCount" runat="server" ></asp:Label>
+    </div>
+  </div>
+</nav>
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

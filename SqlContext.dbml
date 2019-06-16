@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SocialSports" Class="SqlContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\SocialSports.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SocialSportsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblNflSchedule" Member="tblNflSchedules">
+    <Type Name="tblNflSchedule">
+      <Column Name="NflGameId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkHomeTeam" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fkVisitorTeam" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="datDateOfGame" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="intWeekNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="blnIsBuy" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNflTeams" Member="tblNflTeams">
+    <Type Name="tblNflTeam">
+      <Column Name="pkTeamId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="blnIsAFC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="strTeamName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="strTeamField" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="strTeamImage" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="strTeamConference" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblNflTeam_tblUsersFavoriteNflTeam" Member="tblUsersFavoriteNflTeams" ThisKey="pkTeamId" OtherKey="fkSportsTeam" Type="tblUsersFavoriteNflTeam" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSportsTypes" Member="tblSportsTypes">
+    <Type Name="tblSportsType">
+      <Column Name="pkSportsTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strSportsName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsersFavoriteNflTeams" Member="tblUsersFavoriteNflTeams">
+    <Type Name="tblUsersFavoriteNflTeam">
+      <Column Name="pkSportsFavoriteTeamId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fkSportsTeam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblNflTeam_tblUsersFavoriteNflTeam" Member="tblNflTeam" ThisKey="fkSportsTeam" OtherKey="pkTeamId" Type="tblNflTeam" IsForeignKey="true" />
+      <Association Name="tblUser_tblUsersFavoriteNflTeam" Member="tblUser" ThisKey="fkUserId" OtherKey="pkUserId" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNflStatisticalCategoryTypes" Member="tblNflStatisticalCategoryTypes">
+    <Type Name="tblNflStatisticalCategoryType">
+      <Column Name="pkStatisticalCategoryTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strStatisticalCategoryTypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNflPlayers" Member="tblNflPlayers">
+    <Type Name="tblNflPlayer">
+      <Column Name="pkPlayerId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="strPlayerName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fkPlayerTeam" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="strPlayerImage" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="strPlayerPosition" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNflStatisticalCategoryTypesOffensivePlayer" Member="tblNflStatisticalCategoryTypesOffensivePlayers">
+    <Type Name="tblNflStatisticalCategoryTypesOffensivePlayer">
+      <Column Name="pkStatisticalCategoryTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strStatisticalCategoryTypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="strOffensivePosition" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNflStatisticalCategoryTypesDefensivePlayer" Member="tblNflStatisticalCategoryTypesDefensivePlayers">
+    <Type Name="tblNflStatisticalCategoryTypesDefensivePlayer">
+      <Column Name="pkStatisticalCategoryTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strStatisticalCategoryTypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserTreeViewItems" Member="tblUserTreeViewItems">
+    <Type Name="tblUserTreeViewItem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TreeViewText" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NavigateURL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCredentialsRecovery" Member="tblCredentialsRecoveries">
+    <Type Name="tblCredentialsRecovery">
+      <Column Name="pkStatisticalCategoryTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="guiRecoveryGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="fkUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datResetRequestDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="strTemporaryPassWord" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="blnIsPassWordRecovery" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsersPaymentInformation" Member="tblUsersPaymentInformations">
+    <Type Name="tblUsersPaymentInformation">
+      <Column Name="pkPaymentInformationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strAccountNumber" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="strFirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="strLastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLinkUsersToBets" Member="tblLinkUsersToBets">
+    <Type Name="tblLinkUsersToBet">
+      <Column Name="pkLinkId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkUserWhoCreatedId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fkUserWhoAccepted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fkBetId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="blnIsTeamBet" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="datDateTimeAccepted" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBetHistory" Member="tblBetHistories">
+    <Type Name="tblBetHistory">
+      <Column Name="pkHistoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkBetId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fkUserIdWinner" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fkUserIdLoser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsTeamBet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblParentBulletinBoard" Member="tblParentBulletinBoards">
+    <Type Name="tblParentBulletinBoard">
+      <Column Name="intParentBoardId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strBoardMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="intBetId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intBoardAttachmentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="blnIsTeamBet" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="intUserIdWhoPostedBoard" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datDateTimeCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="intNumOfLikes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblParentBulletinBoard_tblChildBulletinBoard" Member="tblChildBulletinBoards" ThisKey="intParentBoardId" OtherKey="intParentBoardId" Type="tblChildBulletinBoard" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblChildBulletinBoard" Member="tblChildBulletinBoards">
+    <Type Name="tblChildBulletinBoard">
+      <Column Name="intChildBoardId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="intParentBoardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strBoardMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="intBoardAttachmentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intBoardCreatorUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datDateTimeCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="intNumOfLikes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblParentBulletinBoard_tblChildBulletinBoard" Member="tblParentBulletinBoard" ThisKey="intParentBoardId" OtherKey="intParentBoardId" Type="tblParentBulletinBoard" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsers" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="pkUserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strUserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="strPassword" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="strEmail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="bytUserImage" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="datDateRegistered" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tblUser_tblUsersFavoriteNflTeam" Member="tblUsersFavoriteNflTeams" ThisKey="pkUserId" OtherKey="fkUserId" Type="tblUsersFavoriteNflTeam" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTeamStatsActualResults" Member="tblTeamStatsActualResults">
+    <Type Name="tblTeamStatsActualResult">
+      <Column Name="pkActualResultId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkGameId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strTeam" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="datDateOfGame" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Yards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PassingYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RushingYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReceivingYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sacks" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Scoring" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Touchdowns" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tackles" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Interceptions" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBetApprovals" Member="tblBetApprovals">
+    <Type Name="tblBetApproval">
+      <Column Name="pkHistoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkBetId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fkUserIdWhoApproved" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="blnIsTeamBet" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPlayerBets" Member="tblPlayerBets">
+    <Type Name="tblPlayerBet">
+      <Column Name="pkBetId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkCreatorUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWeekNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strPlayerName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fkStatType" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="strLogicArgument" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="decArgumentValue" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="datDateTimeCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="decMoneyWager" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="blnBetIsOpened" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTeamBets" Member="tblTeamBets">
+    <Type Name="tblTeamBet">
+      <Column Name="pkBetId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkCreatorUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWeekNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strTeam" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fkStatType" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="strLogicArgument" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="decArgumentValue" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="datDateTimeCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="decMoneyWager" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="blnBetIsOpened" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsersBettingStatistics" Member="tblUsersBettingStatistics">
+    <Type Name="tblUsersBettingStatistic">
+      <Column Name="pkStatId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intNumberOfGamesWon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intNumberOfGamesLost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fltOverallWinningPercentage" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="fltTeamWinPercentage" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="fltPlayerWinPercentage" Type="System.Single" DbType="Real" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStatsBetSearchQueries" Member="tblStatsBetSearchQueries">
+    <Type Name="tblStatsBetSearchQuery">
+      <Column Name="pkQueryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsPlayerBetSearch" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="strEntityName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="strStatArgument" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="strLogicArgument" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="strValueArgument" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="decWagerAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="datDateTimeCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="guidQuery" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStatsPageVisits" Member="tblStatsPageVisits">
+    <Type Name="tblStatsPageVisit">
+      <Column Name="pkVisitId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fkUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strBaseUrlVisited" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="strQueryStringValue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datDateTimeVisited" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="blnIsTeamBet" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
